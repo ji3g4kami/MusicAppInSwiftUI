@@ -11,9 +11,8 @@
 		147D6F4224B0D866005C7756 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147D6F4124B0D866005C7756 /* ContentView.swift */; };
 		147D6F4424B0D869005C7756 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 147D6F4324B0D869005C7756 /* Assets.xcassets */; };
 		147D6F4724B0D869005C7756 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 147D6F4624B0D869005C7756 /* Preview Assets.xcassets */; };
-		147D6F5224B0D8F7005C7756 /* ShapeOfYou.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 147D6F4F24B0D8F7005C7756 /* ShapeOfYou.m4a */; };
-		147D6F5324B0D8F7005C7756 /* Havana.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 147D6F5024B0D8F7005C7756 /* Havana.m4a */; };
-		147D6F5424B0D8F7005C7756 /* 青花瓷.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 147D6F5124B0D8F7005C7756 /* 青花瓷.m4a */; };
+		147D6F5724B0E28B005C7756 /* Songs in Resources */ = {isa = PBXBuildFile; fileRef = 147D6F5624B0E28B005C7756 /* Songs */; };
+		147D6F5924B0E375005C7756 /* BidirectionCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147D6F5824B0E375005C7756 /* BidirectionCollection.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,9 +22,8 @@
 		147D6F4324B0D869005C7756 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		147D6F4624B0D869005C7756 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		147D6F4824B0D869005C7756 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		147D6F4F24B0D8F7005C7756 /* ShapeOfYou.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = ShapeOfYou.m4a; sourceTree = "<group>"; };
-		147D6F5024B0D8F7005C7756 /* Havana.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Havana.m4a; sourceTree = "<group>"; };
-		147D6F5124B0D8F7005C7756 /* 青花瓷.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "青花瓷.m4a"; sourceTree = "<group>"; };
+		147D6F5624B0E28B005C7756 /* Songs */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Songs; sourceTree = "<group>"; };
+		147D6F5824B0E375005C7756 /* BidirectionCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BidirectionCollection.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,12 +56,13 @@
 		147D6F3E24B0D866005C7756 /* MusicAppInSwiftUI */ = {
 			isa = PBXGroup;
 			children = (
-				147D6F4E24B0D8D3005C7756 /* Songs */,
 				147D6F3F24B0D866005C7756 /* MusicAppInSwiftUIApp.swift */,
 				147D6F4124B0D866005C7756 /* ContentView.swift */,
 				147D6F4324B0D869005C7756 /* Assets.xcassets */,
+				147D6F5624B0E28B005C7756 /* Songs */,
 				147D6F4824B0D869005C7756 /* Info.plist */,
 				147D6F4524B0D869005C7756 /* Preview Content */,
+				147D6F5824B0E375005C7756 /* BidirectionCollection.swift */,
 			);
 			path = MusicAppInSwiftUI;
 			sourceTree = "<group>";
@@ -74,16 +73,6 @@
 				147D6F4624B0D869005C7756 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		147D6F4E24B0D8D3005C7756 /* Songs */ = {
-			isa = PBXGroup;
-			children = (
-				147D6F5124B0D8F7005C7756 /* 青花瓷.m4a */,
-				147D6F5024B0D8F7005C7756 /* Havana.m4a */,
-				147D6F4F24B0D8F7005C7756 /* ShapeOfYou.m4a */,
-			);
-			path = Songs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -143,11 +132,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				147D6F5424B0D8F7005C7756 /* 青花瓷.m4a in Resources */,
+				147D6F5724B0E28B005C7756 /* Songs in Resources */,
 				147D6F4724B0D869005C7756 /* Preview Assets.xcassets in Resources */,
-				147D6F5324B0D8F7005C7756 /* Havana.m4a in Resources */,
 				147D6F4424B0D869005C7756 /* Assets.xcassets in Resources */,
-				147D6F5224B0D8F7005C7756 /* ShapeOfYou.m4a in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -159,6 +146,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				147D6F4224B0D866005C7756 /* ContentView.swift in Sources */,
+				147D6F5924B0E375005C7756 /* BidirectionCollection.swift in Sources */,
 				147D6F4024B0D866005C7756 /* MusicAppInSwiftUIApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -11,9 +11,9 @@ import AVKit
 struct ContentView: View {
     
     @State var isPlaying = false
-    
+    @State var currentPlayingUrl: URL = playlist.first!
     @State var audioPlayer: AVAudioPlayer = {
-        let songUrl = Bundle.main.url(forResource: "ShapeOfYou", withExtension: "m4a")!
+        let songUrl = playlist.first!
         return try! AVAudioPlayer(contentsOf: songUrl)
     }()
     
@@ -29,6 +29,27 @@ struct ContentView: View {
                         .foregroundColor(.btnColor)
                 }
                 HStack {
+                    Button(action: {
+                        audioPlayer.stop()
+                        if let nextUrl = Self.playlist.before(currentPlayingUrl) {
+                            currentPlayingUrl = nextUrl
+                        } else {
+                            currentPlayingUrl = Self.playlist.last!
+                        }
+                        audioPlayer = try! AVAudioPlayer(contentsOf: currentPlayingUrl)
+                        audioPlayer.play()
+                        isPlaying = true
+                    }, label: {
+                        Image(systemName: "backward.end")
+                            .resizable()
+                            .frame(width: 30, height: 30)
+                            .aspectRatio(contentMode: .fill)
+                            .foregroundColor(.btnColor)
+                    })
+                    
+                    Spacer()
+                        .frame(width: 30)
+                    
                     if isPlaying {
                         Button(action: {
                             audioPlayer.pause()
@@ -52,10 +73,37 @@ struct ContentView: View {
                                 .foregroundColor(.btnColor)
                         })
                     }
+                    
+                    Spacer()
+                        .frame(width: 30)
+                    
+                    Button(action: {
+                        audioPlayer.stop()
+                        if let nextUrl = Self.playlist.after(currentPlayingUrl) {
+                            currentPlayingUrl = nextUrl
+                        } else {
+                            currentPlayingUrl = Self.playlist.first!
+                        }
+                        audioPlayer = try! AVAudioPlayer(contentsOf: currentPlayingUrl)
+                        audioPlayer.play()
+                        isPlaying = true
+                    }, label: {
+                        Image(systemName: "forward.end")
+                            .resizable()
+                            .frame(width: 30, height: 30)
+                            .aspectRatio(contentMode: .fill)
+                            .foregroundColor(.btnColor)
+                    })
                 }
             }
         }
     }
+}
+
+extension ContentView {
+    static let playlist: [URL] = {
+        return Bundle.main.urls(forResourcesWithExtension: "m4a", subdirectory: "Songs")!
+    }()
 }
 
 struct ContentView_Previews: PreviewProvider {
